@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_excempt
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from toys.models import Toy
 from rest_framework import status
@@ -15,7 +15,7 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-@csrf_excempt
+@csrf_exempt
 def toy_list(request):
     if request.method == 'GET':
         toys = Toy.objects.all()
@@ -32,7 +32,7 @@ def toy_list(request):
         return JSONResponse(toys_serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
 
-@csrf_excempt
+@csrf_exempt
 def toy_detail(request, pk):
     try:
         toy = Toy.objects.get(pk=pk)
