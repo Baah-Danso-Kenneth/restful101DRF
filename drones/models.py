@@ -26,3 +26,26 @@ class Drone(models.Model):
 
     def ___str__(self):
         return self.name
+
+
+class Pilot(models.Model):
+    MALE = 'M'
+    FEMALE = 'F'
+    GENDER_CHOICES = (
+        (MALE, 'Male'),
+        (FEMALE, 'Female'),
+    )
+    name = models.CharField(max_length=250)
+    gender = models.CharField(
+        max_length=2,
+        choices=GENDER_CHOICES,
+        default=MALE
+    )
+    races_count = models.IngeterFeild()
+    inserted_timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
