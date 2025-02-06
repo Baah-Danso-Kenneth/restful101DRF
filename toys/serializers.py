@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework import serializers
 from toys.models import Toy
 
 class ToySerializer(serializers.ModelSerializer):
