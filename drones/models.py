@@ -9,3 +9,20 @@ class DroneCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+class Drone(models.Model):
+    name = models.CharField(max_length=250)
+    drone_category = models.ForeignKey(
+        DroneCategory,
+        related_name='drones',
+        on_delete = models.CASCADE
+    )
+    manufacturing_date = models.DateTimeField()
+    has_it_completed = models.BooleanField(default=False)
+    inserted_timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('name',)
+
+    def ___str__(self):
+        return self.name
