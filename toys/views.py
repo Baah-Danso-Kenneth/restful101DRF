@@ -13,7 +13,6 @@ def toy_list(request):
         return Response(toys_serializer.data)
 
     elif request.method == 'POST':
-        toy_data = JSONParser().parse(request)
         toys_serializer = ToySerializer(data=toy_data)
         if toys_serializer.is_valid():
             toys_serializer.save()
