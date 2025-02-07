@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #Local Apps
-    'toys.apps.ToysConfig',
-
     #ThirdParty Apps
     'rest_framework',
+
+    # Local Apps
+    'drones.apps.DronesConfig',
 ]
 
 MIDDLEWARE = [
