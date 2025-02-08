@@ -41,7 +41,7 @@ class Pilot(models.Model):
         choices=GENDER_CHOICES,
         default=MALE
     )
-    races_count = models.IngeterFeild()
+    races_count = models.IntegerField()
     inserted_timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -59,7 +59,7 @@ class Competition(models.Model):
     drone = models.ForeignKey(
         Drone,
     on_delete = models.CASCADE)
-    distance_in_feet = models.IngeterFeild()
+    distance_in_feet = models.IntegerField()
     distance_achievement_date = models.DateTimeField()
 
     class Meta:
