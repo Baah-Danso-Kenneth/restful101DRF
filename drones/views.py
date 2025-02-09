@@ -21,7 +21,7 @@ class DroneCategoryList(generics.ListCreateAPIView):
     serializer_class = DroneCategorySerializer
     name = 'drone-category-list'
 
-class DroneCategoryDetail(generics.RetreiveUpdateDeleteAPIView):
+class DroneCategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = DroneCategory.objects.all()
     serializer_class = DroneCategorySerializer
     name = 'drone-category-detail'
@@ -31,7 +31,7 @@ class DroneList(generics.ListCreateAPIView):
     serializer_class = DroneSerializer
     name = 'drone-list'
 
-class DroneDetail(generics.RetreiveUpdateDeleteAPIView):
+class DroneDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset= Drone.objects.all()
     serializer = DroneSerializer
     name = 'drone-detail'
@@ -41,7 +41,7 @@ class PilotList(generics.ListCreateAPIView):
     serializer_class = PilotSerializer
     name='pilot-list'
 
-class PilotDetail(generics.RetreiveUpdateDeleteAPIView):
+class PilotDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Pilot.objects.all()
     serializer_class = PilotSerializer
     name = 'pilot-detail'
@@ -51,7 +51,7 @@ class CompetitionList(generics.ListCreateAPIView):
     serializer_class = CompetitionSerializer
     name = 'competition-list'
 
-class CompetitionDetails(generics.RetreiveUpdateDeleteAPIView):
+class CompetitionDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Competition.objects.all()
     serializer_class = PilotCompetitionSerializer
     name = 'competition-details'
