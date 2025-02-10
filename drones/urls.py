@@ -23,6 +23,6 @@ urlpatterns = [
     path('competition/<pk>/', views.CompetitionDetails.as_view(),
          name=CompetitionDetails.name),
 
-    path('',views.ApiRoot.as_view(),
+    path('api-root/',views.ApiRoot.as_view(),
          name=views.ApiRoot.name)
 ]
